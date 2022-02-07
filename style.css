@@ -1,0 +1,229 @@
+:root{
+
+    --clr-bright-orange: 31 77% 52%;
+    --clr-dark-cyan: 184 100% 22%;
+    --clr-very-dark-cyan: 179 100% 13%;
+    /* paragraph */
+    --clr-white : 0 0% 100%;
+    /* background, headings, buttons */
+    --clr-light-gray: 0 0% 95%;
+
+  /* font size */
+
+    --fs-paragraph: 1.1rem;
+    --ff-big-shoulders: 'Big Shoulders Display', cursive;
+    --ff-lexend-deca:'Lexend Deca', sans-serif;
+    --ff-300: 300;
+    --fw-400: 400;
+    --ff-500: 500;
+    --fw-700: 700;
+
+
+}
+
+/* font familiy*/
+
+/* ------------------  */
+/* Reset               */
+/* ------------------- */
+
+/* Box sizing */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0;
+    padding: 0;
+}
+
+/* set up the body */
+
+body {
+    line-height: 1.5;
+    min-height: 100vh;
+    background-color: hsl(var(--clr-light-gray));
+    font-family: var(--ff-lexend-deca);
+    font-size: var(--fs-paragraph);
+    
+    color: hsl(var(--clr-white) / .75);
+}
+
+a{
+    text-decoration: none;
+}
+
+/* make images easier to work with */
+
+img,
+picture{
+    max-width: 100%;
+    display: block;
+}
+
+/* make forms easier to work with */
+
+input,
+button,
+textarea,
+select{
+    font: inherit;
+}
+
+/* making thickness universal */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+    font-weight: var(--fw-500)
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+/* remove animations for people who have turned them off */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.main{
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.cards-container{
+    display: grid;
+    width: 92%;
+    place-content: center;
+    margin-top: 20px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 70px;
+    min-width: 280px;
+    max-width: 500px;
+    gap: 30px;
+}
+@media (max-width: 360px){
+    .card{
+        padding-inline: 50px;
+    }
+}
+
+.card--sedan{
+    background-color: hsl(var(--clr-bright-orange));
+    border-radius: 8px 8px 0 0 ;
+}
+
+.card--suv{
+    background-color: hsl(var(--clr-dark-cyan));
+}
+
+.card--luxury{
+    background-color: hsl(var(--clr-very-dark-cyan));
+    border-radius: 0px 0px 8px 8px ;
+}
+
+.icon-container{
+    margin-top: 30px;
+    display: inline-block;
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 80px;
+    height: 80px;
+}
+.sedan{
+    background-image: url('./images/icon-sedans.svg');
+}   
+.suv{
+    background-image: url('./images/icon-suvs.svg');
+}
+.luxury{
+    background-image: url('./images/icon-luxury.svg');
+}
+
+.card-title{
+    font-family: var(--ff-big-shoulders);
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.card-paragraph{
+    margin-bottom: 1rem;
+}
+
+.primary-button{
+    display: flex;
+    justify-content: center;
+    color: black;
+    align-items: center;
+    padding: 15px 40px;
+    width: fit-content;
+    border-radius: 50px;
+    background-color: hsl(var(--clr-light-gray));
+    margin-bottom: 40px;
+}
+
+.button--sedan{
+    color: hsl(var(--clr-bright-orange));
+}
+.button--suv{
+    color: hsl(var(--clr-dark-cyan));
+}
+.button--luxury{
+    color: hsl(var(--clr-very-dark-cyan));
+}
+
+
+
+@media (min-width: 55em){
+    .card{
+        max-width: 350px;
+        padding-inline: 40px;
+    }
+    .cards-container{
+        display: flex;
+    }
+
+    .card--sedan{
+        border-radius: 8px 0 0 8px;
+    }
+    .card--luxury{
+        border-radius: 0px 8px 8px 0;
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
